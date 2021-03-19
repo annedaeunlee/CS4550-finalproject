@@ -1,0 +1,44 @@
+<h1>Listing Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date posted</th>
+      <th>Boba place</th>
+      <th>Drink name</th>
+      <th>Specialty</th>
+      <th>Wifi avail</th>
+      <th>Affordability</th>
+      <th>Proximity</th>
+      <th>Photo</th>
+      <th>Hours open</th>
+      <th>Contact info</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for post <- @posts do %>
+    <tr>
+      <td><%= post.date_posted %></td>
+      <td><%= post.boba_place %></td>
+      <td><%= post.drink_name %></td>
+      <td><%= post.specialty %></td>
+      <td><%= post.wifi_avail %></td>
+      <td><%= post.affordability %></td>
+      <td><%= post.proximity %></td>
+      <td><%= post.photo %></td>
+      <td><%= post.hours_open %></td>
+      <td><%= post.contact_info %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.post_path(@conn, :show, post) %></span>
+        <span><%= link "Edit", to: Routes.post_path(@conn, :edit, post) %></span>
+        <span><%= link "Delete", to: Routes.post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Post", to: Routes.post_path(@conn, :new) %></span>

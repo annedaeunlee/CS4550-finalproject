@@ -1,0 +1,58 @@
+<h1>Show Post</h1>
+
+<ul>
+
+  <li>
+    <strong>Date posted:</strong>
+    <%= @post.date_posted %>
+  </li>
+
+  <li>
+    <strong>Boba place:</strong>
+    <%= @post.boba_place %>
+  </li>
+
+  <li>
+    <strong>Drink name:</strong>
+    <%= @post.drink_name %>
+  </li>
+
+  <li>
+    <strong>Specialty:</strong>
+    <%= @post.specialty %>
+  </li>
+
+  <li>
+    <strong>Wifi avail:</strong>
+    <%= @post.wifi_avail %>
+  </li>
+
+  <li>
+    <strong>Affordability:</strong>
+    <%= @post.affordability %>
+  </li>
+
+  <li>
+    <strong>Proximity:</strong>
+    <%= @post.proximity %>
+  </li>
+
+  <li>
+    <strong>Photo:</strong>
+    <%= @post.photo %>
+  </li>
+
+  <li>
+    <strong>Hours open:</strong>
+    <%= @post.hours_open %>
+  </li>
+
+  <li>
+    <strong>Contact info:</strong>
+    <%= @post.contact_info %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
+<span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>
